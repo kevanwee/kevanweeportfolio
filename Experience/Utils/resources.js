@@ -1,8 +1,8 @@
 import * as THREE from "three";
 
 import { EventEmitter } from "events";
-import { GLTFLoader } from "three/examples/jsm/Loaders/GLTFLoader.js";
-import { DRACOLoader } from "three/examples/jsm/Loaders/DRACOLoader.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import Experience from "../experience.js";
 
 export default class Resources extends EventEmitter {
