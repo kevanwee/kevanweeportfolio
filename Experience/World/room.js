@@ -46,12 +46,14 @@ export default class Room {
       }
 
       if (child.name === "LAPTOP_SCREEN") {
+        this.resources.items.tvscreen.flipY = false;
         child.material = new THREE.MeshBasicMaterial({
           map: this.resources.items.tvscreen,
         });
       }
 
       if (child.name === "TV_SCREEN") {
+        this.resources.items.tvscreen.flipY = false;
         child.material = new THREE.MeshBasicMaterial({
           map: this.resources.items.tvscreen,
         });
