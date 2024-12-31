@@ -41,6 +41,7 @@ export default class Controls {
     setupASScroll() {
       // https://github.com/ashthornton/asscroll
       const asscroll = new ASScroll({
+          ease: 0.1,
           disableRaf: true,
       });
 
