@@ -335,7 +335,7 @@ h1, h2, h3, h4, p, .hero-main-title, .hero-main-description, .hero-second-subhea
   display: flex;
   opacity: 0;
   top: 40px;
-  left: 48px;
+  left: 24px;
   z-index: 9999999999;
 }
 
@@ -343,7 +343,7 @@ h1, h2, h3, h4, p, .hero-main-title, .hero-main-description, .hero-second-subhea
   display: flex;
   opacity: 1;
   top: 40px;
-  right: 48px;
+  right: 24px;
   z-index: 9999999999;
 }
 
