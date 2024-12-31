@@ -272,6 +272,9 @@ h1, h2, h3, h4, p, .hero-main-title, .hero-main-description, .hero-second-subhea
 }
 
 .intro-text {
+  display: flex;
+  text-align: center;
+  justify-content: center;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -279,7 +282,6 @@ h1, h2, h3, h4, p, .hero-main-title, .hero-main-description, .hero-second-subhea
   font-weight: 500;
   font-size: 16px;
   transform: translate(-50%, -50%);
-  text-align: center;
 }
 
 .arrow-svg-wrapper{
@@ -496,7 +498,7 @@ h1, h2, h3, h4, p, .hero-main-title, .hero-main-description, .hero-second-subhea
 .hero-wrapper {
   position: relative;
   height: 100%;
-  width: calc(100% - 160px);
+  width: calc(100% - 70px);
   margin: 0 auto;
   max-width: 1100px;
   overflow: hidden;
@@ -524,6 +526,10 @@ h1, h2, h3, h4, p, .hero-main-title, .hero-main-description, .hero-second-subhea
   z-index: 3; /* Ensure text stays above other content */
   color: var(--color-text);
   
+}
+
+.hero-main-title {
+  font-size: 50px;
 }
 
 .hero-second-subheading {
