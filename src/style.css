@@ -514,7 +514,7 @@ h1, h2, h3, h4, p, .hero-main-title, .hero-main-description, .hero-second-subhea
 
 .hero-second {
   position: absolute;
-  top: calc(50% - 240px);
+  top: calc(50% - 225px);
   right: 0;
   z-index: 1; /* Ensure it's below hero-main */
   color: var(--color-text);
