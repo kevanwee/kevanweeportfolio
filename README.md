@@ -16,7 +16,7 @@ Did you spot some of the artifacts lying around?
 <br />I've been a long time League of Legends player since 2011 (Season 1) and an equally long time fan of T1 (or SK Telecom T1 2 as it then was) since it's formation in 2013. 
 
 <br />3. Yoasobi
-<br />![image](https://github.com/user-attachments/assets/f7fd482c-0173-41e8-8852-4efb9cdbd15c)
+<br />![image](https://github.com/user-attachments/assets/968a05ff-c962-4a04-9363-f69b861814a1)
 <br />My favorite artist (and song as shown in the music video playing on the screens)
 
 <br />4. Totoro "Plush"
