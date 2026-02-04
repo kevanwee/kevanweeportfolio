@@ -78,16 +78,17 @@ export default class Ica {
     model.visible = true;
     
     // Load textures with callback to ensure they're loaded
+    const baseUrl = import.meta.env.BASE_URL;
     const bodyColorTexture = this.textureLoader.load(
-      '/Ica/Textures/Servant_HyacineServant_00_Body_Color.png',
+      `${baseUrl}Ica/Textures/Servant_HyacineServant_00_Body_Color.png`,
       (texture) => console.log("Body texture loaded successfully")
     );
     const eyeColorTexture = this.textureLoader.load(
-      '/Ica/Textures/Servant_HyacineServant_00_Eye_Color_1.png',
+      `${baseUrl}Ica/Textures/Servant_HyacineServant_00_Eye_Color_1.png`,
       (texture) => console.log("Eye texture 1 loaded successfully")
     );
     const eyeColorTexture2 = this.textureLoader.load(
-      '/Ica/Textures/Servant_HyacineServant_00_Eye_Color_2.png',
+      `${baseUrl}Ica/Textures/Servant_HyacineServant_00_Eye_Color_2.png`,
       (texture) => console.log("Eye texture 2 loaded successfully")
     );
     

@@ -1,23 +1,25 @@
+const base = import.meta.env.BASE_URL;
+
 export default [
   {
     name: "room",
     type: "glbModel",
-    path: "/models/finalroom.glb",
+    path: `${base}models/finalroom.glb`,
   },
 
   {
     name: "tvscreen",
     type: "videoTexture",
-    path: "/textures/anoyume.mp4",
+    path: `${base}textures/anoyume.mp4`,
   },
   {
     name: "ica",
     type: "glbModel",
-    path: "/Ica/Art_HyacineServant_00.glb",
+    path: `${base}Ica/Art_HyacineServant_00.glb`,
   },
   {
     name: "icaAnimations",
     type: "fbxModel",
-    path: "/Ica/Art_HyacineServant_00.fbx",
+    path: `${base}Ica/Art_HyacineServant_00.fbx`,
   },
 ];
