@@ -10,4 +10,14 @@ export default [
     type: "videoTexture",
     path: "/textures/anoyume.mp4",
   },
+  {
+    name: "ica",
+    type: "glbModel",
+    path: "/Ica/Art_HyacineServant_00.glb",
+  },
+  {
+    name: "icaAnimations",
+    type: "fbxModel",
+    path: "/Ica/Art_HyacineServant_00.fbx",
+  },
 ];

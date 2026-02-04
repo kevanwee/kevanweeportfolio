@@ -38,6 +38,11 @@ export default class Controls {
     // this.onWheel();
   }
 
+  getRightHalfCenterX() {
+    const viewWidth = this.sizes.frustrum * this.sizes.aspect;
+    return viewWidth / 4;
+  }
+
     setupASScroll() {
       // https://github.com/ashthornton/asscroll
       const asscroll = new ASScroll({
@@ -110,9 +115,16 @@ export default class Controls {
 
         this.firstMoveTimeline.to(this.room.position, {
           x: () => {
-
-            return this.sizes.width * 0.0017;
+            return this.getRightHalfCenterX();
           }
+        });
+
+        // Despawn Ica when entering About Me section, respawn on return to hero
+        ScrollTrigger.create({
+          trigger: ".first-section",
+          start: "top 80%",
+          onEnter: () => this.experience.world?.ica?.despawn(),
+          onLeaveBack: () => this.experience.world?.ica?.respawn(),
         });
 
         // Second section

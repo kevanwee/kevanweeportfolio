@@ -387,6 +387,54 @@ h1, h2, h3, h4, p, .hero-main-title, .hero-main-description, .hero-second-subhea
   right: 0;
 }
 
+.ica-tooltip {
+  position: fixed;
+  z-index: 9999999998;
+  width: min(320px, 86vw);
+  padding: 14px 16px 16px;
+  background: var(--color-text);
+  color: var(--color-background);
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.35;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 6px 16px;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  text-align: center;
+}
+
+.ica-tooltip-title {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+}
+
+.ica-tooltip-divider {
+  height: 1px;
+  margin: 8px auto 10px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.ica-tooltip-body {
+  font-weight: 500;
+}
+
+.ica-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--color-text);
+}
+
 
 .resumebutton {
   border-radius: 2px;
@@ -487,6 +535,31 @@ h1, h2, h3, h4, p, .hero-main-title, .hero-main-description, .hero-second-subhea
   left: 30px;
 }
 
+.respawn-ica-button {
+  position: fixed;
+  top: 90px;
+  right: 48px;
+  z-index: 99;
+  cursor: pointer;
+  padding: 10px 16px;
+  background: var(--color-pink);
+  color: var(--color-background);
+  border: none;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.respawn-ica-button:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 7px 20px;
+}
+
 /* hero */
 
 .hero {
@@ -548,5 +621,32 @@ h1, h2, h3, h4, p, .hero-main-title, .hero-main-description, .hero-second-subhea
   .progress-bar-wrapper-left{
     right: 0;
     left: auto;
+  }
+
+  .hero-wrapper {
+    width: calc(100% - 24px);
+  }
+
+  .hero-main-title {
+    font-size: 34px;
+  }
+
+  .hero-main-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .hero-second {
+    top: 96px;
+    bottom: auto;
+  }
+
+  .toggle-bar {
+    top: 16px;
+    right: 16px;
+  }
+
+  .respawn-ica-button {
+    display: none;
   }
 }

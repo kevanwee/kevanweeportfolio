@@ -94,8 +94,9 @@ export default class Room {
             let colorIndex = 0;
             setInterval(() => {
               colorIndex = (colorIndex + 1) % rainbowColors.length;
-              part.material.emissive.setHex(rainbowColors[colorIndex]);
-              this.actualRoom.children[24].color.setHex(rainbowColors[colorIndex]); // Sync light color with emissive material
+              const nextColor = rainbowColors[colorIndex];
+              part.material.emissive.setHex(nextColor);
+              this.rgbLight.color.setHex(nextColor); // Sync light color with emissive material
             }, 200); // Change color every 200ms
           }
         });

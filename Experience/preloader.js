@@ -113,38 +113,32 @@ export default class Preloader extends EventEmitter {
 
     onScroll(e) {
         // Check if the second intro has already been played
-        if (e.deltaY > 0 && !this.secondIntroPlayed) {
-            this.removeEventListeners(); // Remove the event listener
-            this.playSecondIntro();
-            this.secondIntroPlayed = true; // Set the flag to true
-            this.secondIntro().then(() => {
-                this.experience.world.room.setAnimation();  // This will trigger the animation in Room
-            });
+        if (e.deltaY > 0) {
+            this.triggerSecondIntro();
         }
     }
 
     onTouch(e) {
-        this.initalY = e.touches[0].clientY;
-        this.playSecondIntro();
-        this.secondIntro().then(() => {
-            console.log("ANIMATION", this.experience.world.room);
-            this.experience.world.room.setAnimation();  // This will trigger the animation in Room
-        });
+        this.initialY = e.touches[0].clientY;
+        this.triggerSecondIntro();
     }
 
     onTouchMove(e) {
         let currentY = e.touches[0].clientY;
-        let difference = this.initalY - currentY;
+        let difference = this.initialY - currentY;
         if (difference > 0) {
-            this.removeEventListeners();
-            this.playSecondIntro();
-            
+            this.triggerSecondIntro();
         }
-        this.intialY = null;
-        this.secondIntro().then(() => {
-            console.log("ANIMATION", this.experience.world.room);
-            this.experience.world.room.setAnimation();  // This will trigger the animation in Room
-        });
+        this.initialY = null;
+    }
+
+    triggerSecondIntro() {
+        if (this.secondIntroPlayed) {
+            return;
+        }
+        this.secondIntroPlayed = true;
+        this.removeEventListeners();
+        this.playSecondIntro();
     }
 
     removeEventListeners() {
@@ -429,6 +423,15 @@ export default class Preloader extends EventEmitter {
                     }
                 )
 
+                .add(() => {
+                    if (this.device === "desktop") {
+                        GSAP.to(".respawn-ica-button", {
+                            opacity: 1,
+                            pointerEvents: "auto",
+                        });
+                    }
+                })
+
                 .to(
                     ".arrow-svg-wrapper", {
                         opacity: 1,
@@ -449,7 +452,7 @@ export default class Preloader extends EventEmitter {
         this.moveFlag = false;
         this.scaleFlag = false;
         this.emit("enablecontrols");
-        console
+        this.experience.world.room.setAnimation();
     }
 
     scale() {

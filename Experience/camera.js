@@ -1,7 +1,6 @@
 import * as THREE from "three";
 import Experience from "./experience.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { textureLoad } from "three/src/nodes/TSL.js";
 
 export default class Camera {
   constructor() {

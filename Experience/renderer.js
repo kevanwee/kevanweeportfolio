@@ -15,12 +15,13 @@ export default class Renderer {
     setRenderer() {
         this.renderer = new THREE.WebGLRenderer({
             canvas: this.canvas,
-            antialias: true,
+            antialias: this.sizes.device !== "mobile",
+            powerPreference: "high-performance",
         });
 
         // Enable physically accurate lighting
         this.renderer.physicallyCorrectLights = true;
-        this.renderer.outputEncoding = THREE.sRGBEncoding; // Ensure correct color space
+        this.renderer.outputColorSpace = THREE.SRGBColorSpace; // Ensure correct color space
         this.renderer.toneMapping = THREE.CineonToneMapping; // Set tone mapping for realistic output
         this.renderer.toneMappingExposure = 1.75; // Adjust exposure level
         this.renderer.shadowMap.enabled = true;

@@ -5,6 +5,7 @@ import Room from "./room.js";
 import Controls from "./controls.js";
 import Environment from "./environment.js";
 import Floor from "./floor.js";
+import Ica from "./ica.js";
 import { EventEmitter } from "events";
 
 
@@ -23,6 +24,9 @@ export default class World extends EventEmitter{
       this.room = new Room();
       this.environment = new Environment();
       this.floor = new Floor();
+      if (this.sizes.device === "desktop") {
+        this.ica = new Ica();
+      }
       //this.controls = new Controls();
       this.emit("worldready");
     });
@@ -54,6 +58,10 @@ export default class World extends EventEmitter{
 
     if (this.controls) {
       this.controls.update();
+    }
+
+    if (this.ica) {
+      this.ica.update();
     }
   }
 }
